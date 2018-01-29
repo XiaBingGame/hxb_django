@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+    {% for post in posts %}
+        <section class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+            <p class="post-meta">
+                时间:  <a class="post-author" href="#">{{ post.publish |date:"Y /m /d"}}</a>
+                <a class="post-category post-category-js" href="#">{{ post.category }}</a>
+            </p>
+        </header>
+        </section>
+    {% endfor %}
+</div><!-- /.blog-post -->
+    {% include "pagination.html" with page=posts %}
+{% endblock %}
