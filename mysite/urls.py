@@ -19,7 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     #url(r'^$', include('webgl.urls')),
-    url(r'^polls/', include('polls.urls')),
+    #url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
     # url(r'^blog/', include('blog.urls',
     #                       namespace='blog',
@@ -28,6 +28,6 @@ urlpatterns = [
                            namespace='blog',
                            app_name='blog')),
     url(r'^$', include('blog.urls')),
-    url(r'^webgl/', include('webGLApp.urls')),
+    #url(r'^webgl/', include('webGLApp.urls')),
     #url(r'^hblog/', include('hxb_blog.urls'))
 ]

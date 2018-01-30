@@ -1,9 +1,10 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
+{% load custom_markdown %} # 新添加的代码
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
   <h1>{{ post.title }}</h1>
   <p class="date">
-    Published {{ post.publish }} by {{ post.author }}
+	  Published <font color="blue">{{ post.publish }}</font> by {{ post.author }}
   </p>
-  {{ post.body|linebreaks }}
+  {{ post.body|custom_markdown }}
 {% endblock %}

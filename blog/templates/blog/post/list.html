@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_markdown %} # 新添加的代码
 
 {% block content %}
 <div class="posts">
@@ -11,6 +12,11 @@
                 <a class="post-category post-category-js" href="#">{{ post.category }}</a>
             </p>
         </header>
+               <div class="post-description">
+                    <p>
+                        {{ post.body|custom_markdown }}
+                    </p>
+                </div>
         </section>
     {% endfor %}
 </div><!-- /.blog-post -->
