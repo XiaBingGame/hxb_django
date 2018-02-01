@@ -44,3 +44,12 @@ def post_archive(request):
 
 def about_me(request) :
     return render(request, 'aboutme.html')
+
+
+def search_tag(request,tag):
+    try:
+        object_list = Post.published.filter(category = tag)
+    except Post.DoesNotExist:
+        raise Http404
+
+    return render(request, 'tag.html', {'post_list': object_list})
